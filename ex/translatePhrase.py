@@ -2,7 +2,10 @@ def translate(phrase):
     translated = ""
     for letter in phrase:
         if letter in "AEOIUaeoiu":
-            translated += "g"
+            if letter.isupper():
+                translated += "G"
+            else:
+                translated += "g"
         else:
             translated +=letter
     return translated

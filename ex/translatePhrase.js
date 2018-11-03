@@ -4,7 +4,12 @@ function translate(phrase) {
     for (letter in phrase) {
         // console.log(phrase[letter]);
         if (vowels.includes(phrase[letter])) {
-            translated += 'g';
+            if (phrase[letter] === phrase[letter].toUpperCase()) {
+                translated += 'G';
+            }
+            else {
+                translated += 'g';
+            }
         } else {
             translated += phrase[letter];
         }
@@ -12,4 +17,4 @@ function translate(phrase) {
     return translated;
 }
 
-translate('giraffe')
+translate(prompt("Enter a phrase: "));
