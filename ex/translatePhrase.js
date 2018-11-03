@@ -4,12 +4,19 @@ function translate(phrase) {
     for (letter in phrase) {
         // console.log(phrase[letter]);
         if (vowels.includes(phrase[letter])) {
-            translated += 'g';
+            // if (phrase[letter] === phrase[letter].toUpperCase()) {
+            //     translated += 'G';
+            // }
+            // else {
+            //     translated += 'g';
+            // }
+            phrase[letter] === phrase[letter].toUpperCase() ? translated += 'G' : translated += 'g';
         } else {
             translated += phrase[letter];
         }
+
     }
     return translated;
 }
 
-translate('giraffe')
+translate(prompt("Enter a phrase: "));
